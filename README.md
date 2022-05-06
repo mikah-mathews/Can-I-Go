@@ -51,6 +51,8 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * 09:00: Research google places API
 * 09:15: Work on determining all rating options
 * 10:00: Research API
+* 10:40: Make header and add file structures
+* 11:20: Setting up Firebase
 
 ## License
 
