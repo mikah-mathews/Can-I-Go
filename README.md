@@ -50,7 +50,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * 08:40: Set up Project Repo
 * 09:00: Research google places API
 * 09:15: Work on determining all rating options
-
+* 10:00: Research API
 
 ## License
 
