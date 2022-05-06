@@ -56,6 +56,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * 13:00: Work on react tutorial
 * 14:00: React Tutorial
 * 15:00: React Tutorial
+* 16:00: React Tutorial
 
 
 ## License
