@@ -53,7 +53,8 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * 10:00: Research API
 * 10:40: Make header and add file structures
 * 11:20: Setting up Firebase
-* 13:00: Work on react tutorials
+* 13:00: Work on react tutorial
+* 14:00: React Tutorial
 
 
 ## License
