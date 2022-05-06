@@ -29,6 +29,29 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 * No known bugs at this time.
 
+### Research and Planning Log
+#### Friday, 04/29
+* 08:15: Set up Trello Board
+* 08:40: Group Brainstorm with Classmates on Discord
+* 09:30: Fill out Epicodus Capstone Proposal Google Docs
+* 09:50: Work on capstone-proposal.md
+* 10:30: Research Hosting (AWS?)
+* 10:50: Work on Trello Board
+* 11:20: User Research and Outreach (post on disabled discord servers + other platforms to see what options future users would like)
+* 11:45: Work on Trello Board
+* 13:00: Research SQLLite to act as backend management
+* 13:45: Google Business API research
+* 14:00: Work on WireFraming for website
+* 15:00: Work on WireFraming for website
+* 16:00: Work on WireFraming and Trello board
+
+#### Friday, 05/06
+* 08:10: Brainstorming names
+* 08:40: Set up Project Repo
+* 09:00: Research google places API
+* 09:15: Work on determining all rating options
+
+
 ## License
 
 MIT License
