@@ -72,6 +72,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * 14:50: Handling user input tutorial
 * 15:30: Callback Functions tutorial
 * 16:00: Controlled Elements tutorial
+* 16:30: 'This' in JS tutorial
 
 
 ## License
