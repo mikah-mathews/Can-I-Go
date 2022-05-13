@@ -70,6 +70,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * 13:00: Follow React/Redux tutorial
 * 14:00: Follow React Tutorial
 * 14:50: Handling user input tutorial
+* 15:30: Callback Functions tutorial
 
 
 ## License
