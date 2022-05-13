@@ -59,6 +59,14 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * 16:00: React Tutorial
 * 17:00: React Tutorial
 
+#### Friday, 05/13
+* 08:00: React Api Tutorial
+* 09:00: React Api Tutorial
+* 09:30: Sketch logo design ideas
+* 10:00: React Api Tutorial
+* 10:40: Researching props + state
+* 11:15: Reading API documentation
+
 
 ## License
 
