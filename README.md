@@ -67,6 +67,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * 10:40: Researching props + state
 * 11:15: Reading API documentation
 * 12:00: Follow React Tutorial
+* 13:00: Follow React/Redux tutorial
 
 
 ## License
