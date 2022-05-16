@@ -1,17 +1,23 @@
 import React from 'react';
-import Header from './Header/Header';
-import ReviewForm from './Reviews/ReviewForm'
+import { BrowserRouter as Router, Routes, 
+  Route} from "react-router-dom";
+import Header from "./Header/Header";
+import ReviewForm from "./Reviews/ReviewForm";
+import Home from "./Home/Home";
 
 
-class App extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
+function App() {
+  return (
+    <React.Fragment>
+      <Router>
         <Header />
-        <ReviewForm />
-      </React.Fragment>
-    );
-  }
+        <Routes>
+          <Route path="/review/new" element={<ReviewForm />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
+    </React.Fragment>
+  );
   
 }
 

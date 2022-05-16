@@ -5,13 +5,13 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import FormControl from 'react-bootstrap/FormControl';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <React.Fragment>
       <Navbar bg="light" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">Go Accessible</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -19,15 +19,13 @@ function Header() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">About</Nav.Link>
-              <Nav.Link href="#action2">Log In</Nav.Link>
-              <Nav.Link href="#action2">Sign Up</Nav.Link>
+              <Link to="/">Home</Link>
+              <Link to="/review/new">New Review</Link>
             </Nav>
             <Form className="d-flex">
               <FormControl
                 type="search"
-                placeholder="Search"
+                placeholder="Find a Business"
                 className="me-2"
                 aria-label="Search"
               />
