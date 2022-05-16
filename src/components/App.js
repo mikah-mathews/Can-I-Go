@@ -1,14 +1,18 @@
 import React from 'react';
-import Header from './Header/Header.js';
+import Header from './Header/Header';
+import ReviewForm from './Reviews/ReviewForm'
 
 
-function App() {
-  return (
-    <React.Fragment>
-      <Header />
-      
-    </React.Fragment>
-  );
+class App extends React.Component {
+  render () {
+    return (
+      <React.Fragment>
+        <Header />
+        <ReviewForm />
+      </React.Fragment>
+    );
+  }
+  
 }
 
 export default App;
