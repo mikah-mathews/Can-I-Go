@@ -10,6 +10,7 @@ class ReviewForm extends React.Component {
   constructor() {
     super();
     this.state = {
+      businessName: "",
       overallRating: 0,
       physicalAccessibility: 0,
       sensoryAccessibility: 0,
@@ -32,6 +33,7 @@ class ReviewForm extends React.Component {
       timestampsInSnapshots: true
     });
     const reviewRef = db.collection("reviews").add({
+      businessName: this.state.businessName,
       overallRating: this.state.overallRating,
       physicalAccessibility: this.state.physicalAccessibility,
       sensoryAccessibility: this.state.sensoryAccessibility,
@@ -40,11 +42,12 @@ class ReviewForm extends React.Component {
       writtenReview: this.state.writtenReview
     }); 
     this.setState({
-      overallRating: null,
-      physicalAccessibility: null,
-      sensoryAccessibility: null,
-      cleanliness: null,
-      easeOfUse: null,
+      businessName: "",
+      overallRating: 0,
+      physicalAccessibility: 0,
+      sensoryAccessibility: 0,
+      cleanliness: 0,
+      easeOfUse: "",
       writtenReview: ""
     });
   };
@@ -54,256 +57,275 @@ class ReviewForm extends React.Component {
       <React.Fragment>
         <Form onSubmit={this.addReview}>
           <h2>Add New Review</h2> <br />
+          <Form.Control
+            as='textarea'
+            name='businessName'
+            placeholder='Name of Business'
+            className="mb-3 shadow-sm" 
+            required="required"
+            onChange={this.updateInput}
+            value={this.state.businessName}
+            />
           <h6>Overall Rating</h6>
-          {['radio'].map((type) => (
-            <div key={`inline-${type}`} className="mb-3">
-              <Form.Check
-                inline
-                label="1 Star"
-                name="overallRating"
-                type={type}
-                id={`inline-${type}-1`}
-                onChange={this.updateInput}
-                value={this.state.overallRating}
-              />
-              <Form.Check
-                inline
-                label="2 Star"
-                name="overallRating"
-                type={type}
-                id={`inline-${type}-2`}
-                onChange={this.updateInput}
-                value={this.state.overallRating}
-              />
-              <Form.Check
-                inline
-                label="3 Star"
-                name="overallRating"
-                type={type}
-                id={`inline-${type}-3`}
-                onChange={this.updateInput}
-                value={this.state.overallRating}
-              />
-              <Form.Check
-                inline
-                label="4 Star"
-                name="overallRating"
-                type={type}
-                id={`inline-${type}-4`}
-                onChange={this.updateInput}
-                value={this.state.overallRating}
-              />
-              <Form.Check
-                inline
-                label="5 Star"
-                name="overallRating"
-                type={type}
-                id={`inline-${type}-5`}
-                onChange={this.updateInput}
-                value={this.state.overallRating}
-              />
-            </div>
-          ))}    
-          <h6>Physical Accessibility</h6>  
-          {['radio'].map((type) => (
-            <div key={`inline-${type}`} className="mb-3">
-              <Form.Check
-                inline
-                label="1 Star"
-                name="physicalAccessibility"
-                type={type}
-                id={`inline-${type}-1`}
-                onChange={this.updateInput}
-                value={this.state.physicalAccessibility}
-              />
-              <Form.Check
-                inline
-                label="2 Star"
-                name="physicalAccessibility"
-                type={type}
-                id={`inline-${type}-2`}
-                onChange={this.updateInput}
-                value={this.state.physicalAccessibility}
-              />
-              <Form.Check
-                inline
-                label="3 Star"
-                name="physicalAccessibility"
-                type={type}
-                id={`inline-${type}-3`}
-                onChange={this.updateInput}
-                value={this.state.physicalAccessibility}
-              />
-              <Form.Check
-                inline
-                label="4 Star"
-                name="physicalAccessibility"
-                type={type}
-                id={`inline-${type}-4`}
-                onChange={this.updateInput}
-                value={this.state.physicalAccessibility}
-              />
-              <Form.Check
-                inline
-                label="5 Star"
-                name="physicalAccessibility"
-                type={type}
-                id={`inline-${type}-5`}
-                onChange={this.updateInput}
-                value={this.state.physicalAccessibility}
-              />
-            </div>
-          ))}  
+          <span className="star-cb-group">
+            {['radio'].map((type) => (
+              <div key={`inline-${type}`} className="mb-3">
+                <Form.Check
+                  inline
+                  label="1 Star"
+                  name="overallRating"
+                  type={type}
+                  id={`inline-${type}-1`}
+                  onChange={this.updateInput}
+                  value={1}
+                />
+                <Form.Check
+                  inline
+                  label="2 Star"
+                  name="overallRating"
+                  type={type}
+                  id={`inline-${type}-2`}
+                  onChange={this.updateInput}
+                  value={2}
+                />
+                <Form.Check
+                  inline
+                  label="3 Star"
+                  name="overallRating"
+                  type={type}
+                  id={`inline-${type}-3`}
+                  onChange={this.updateInput}
+                  value={3}
+                />
+                <Form.Check
+                  inline
+                  label="4 Star"
+                  name="overallRating"
+                  type={type}
+                  id={`inline-${type}-4`}
+                  onChange={this.updateInput}
+                  value={4}
+                />
+                <Form.Check
+                  inline
+                  label="5 Star"
+                  name="overallRating"
+                  type={type}
+                  id={`inline-${type}-5`}
+                  onChange={this.updateInput}
+                  value={5}
+                />
+              </div>
+            ))}
+          </span>    
+          <h6>Physical Accessibility</h6>
+          <span className="star-cb-group"> 
+            {['radio'].map((type) => (
+              <div key={`inline-${type}`} className="mb-3">
+                <Form.Check
+                  inline
+                  label="1 Star"
+                  name="physicalAccessibility"
+                  type={type}
+                  id={`inline-${type}-1`}
+                  onChange={this.updateInput}
+                  value={1}
+                />
+                <Form.Check
+                  inline
+                  label="2 Star"
+                  name="physicalAccessibility"
+                  type={type}
+                  id={`inline-${type}-2`}
+                  onChange={this.updateInput}
+                  value={2}
+                />
+                <Form.Check
+                  inline
+                  label="3 Star"
+                  name="physicalAccessibility"
+                  type={type}
+                  id={`inline-${type}-3`}
+                  onChange={this.updateInput}
+                  value={3}
+                />
+                <Form.Check
+                  inline
+                  label="4 Star"
+                  name="physicalAccessibility"
+                  type={type}
+                  id={`inline-${type}-4`}
+                  onChange={this.updateInput}
+                  value={4}
+                />
+                <Form.Check
+                  inline
+                  label="5 Star"
+                  name="physicalAccessibility"
+                  type={type}
+                  id={`inline-${type}-5`}
+                  onChange={this.updateInput}
+                  value={5}
+                />
+              </div>
+            ))}
+          </span>  
           <h6>Sensory Accessibility</h6>
-          {['radio'].map((type) => (
-            <div key={`inline-${type}`} className="mb-3">
-              <Form.Check
-                inline
-                label="1 Star"
-                name="sensoryAccessibility"
-                type={type}
-                id={`inline-${type}-1`}
-                onChange={this.updateInput}
-                value={this.state.sensoryAccessibility}
-              />
-              <Form.Check
-                inline
-                label="2 Star"
-                name="sensoryAccessibility"
-                type={type}
-                id={`inline-${type}-2`}
-                onChange={this.updateInput}
-                value={this.state.sensoryAccessibility}
-              />
-              <Form.Check
-                inline
-                label="3 Star"
-                name="sensoryAccessibility"
-                type={type}
-                id={`inline-${type}-3`}
-                onChange={this.updateInput}
-                value={this.state.sensoryAccessibility}
-              />
-              <Form.Check
-                inline
-                label="4 Star"
-                name="sensoryAccessibility"
-                type={type}
-                id={`inline-${type}-4`}
-                onChange={this.updateInput}
-                value={this.state.sensoryAccessibility}
-              />
-              <Form.Check
-                inline
-                label="5 Star"
-                name="sensoryAccessibility"
-                type={type}
-                id={`inline-${type}-5`}
-                onChange={this.updateInput}
-                value={this.state.sensoryAccessibility}
-              />
-            </div>
-          ))}
+          <span className="star-cb-group">
+            {['radio'].map((type) => (
+              <div key={`inline-${type}`} className="mb-3">
+                <Form.Check
+                  inline
+                  label="1 Star"
+                  name="sensoryAccessibility"
+                  type={type}
+                  id={`inline-${type}-1`}
+                  onChange={this.updateInput}
+                  value={1}
+                />
+                <Form.Check
+                  inline
+                  label="2 Star"
+                  name="sensoryAccessibility"
+                  type={type}
+                  id={`inline-${type}-2`}
+                  onChange={this.updateInput}
+                  value={2}
+                />
+                <Form.Check
+                  inline
+                  label="3 Star"
+                  name="sensoryAccessibility"
+                  type={type}
+                  id={`inline-${type}-3`}
+                  onChange={this.updateInput}
+                  value={3}
+                />
+                <Form.Check
+                  inline
+                  label="4 Star"
+                  name="sensoryAccessibility"
+                  type={type}
+                  id={`inline-${type}-4`}
+                  onChange={this.updateInput}
+                  value={4}
+                />
+                <Form.Check
+                  inline
+                  label="5 Star"
+                  name="sensoryAccessibility"
+                  type={type}
+                  id={`inline-${type}-5`}
+                  onChange={this.updateInput}
+                  value={5}
+                />
+              </div>
+            ))}
+          </span>
           <h6>Cleanliness</h6>
-          {['radio'].map((type) => (
-            <div key={`inline-${type}`} className="mb-3">
-              <Form.Check
-                inline
-                label="1 Star"
-                name="cleanliness"
-                type={type}
-                id={`inline-${type}-1`}
-                onChange={this.updateInput}
-                value={this.state.cleanliness}
-              />
-              <Form.Check
-                inline
-                label="2 Star"
-                name="cleanliness"
-                type={type}
-                id={`inline-${type}-2`}
-                onChange={this.updateInput}
-                value={this.state.cleanliness}
-              />
-              <Form.Check
-                inline
-                label="3 Star"
-                name="cleanliness"
-                type={type}
-                id={`inline-${type}-3`}
-                onChange={this.updateInput}
-                value={this.state.cleanliness}
-              />
-              <Form.Check
-                inline
-                label="4 Star"
-                name="cleanliness"
-                type={type}
-                id={`inline-${type}-4`}
-                onChange={this.updateInput}
-                value={this.state.cleanliness}
-              />
-              <Form.Check
-                inline
-                label="5 Star"
-                name="cleanliness"
-                type={type}
-                id={`inline-${type}-5`}
-                onChange={this.updateInput}
-                value={this.state.cleanliness}
-              />
-            </div>
-          ))}
+          <span className="star-cb-group">
+            {['radio'].map((type) => (
+              <div key={`inline-${type}`} className="mb-3">
+                <Form.Check
+                  inline
+                  label="1 Star"
+                  name="cleanliness"
+                  type={type}
+                  id={`inline-${type}-1`}
+                  onChange={this.updateInput}
+                  value={1}
+                />
+                <Form.Check
+                  inline
+                  label="2 Star"
+                  name="cleanliness"
+                  type={type}
+                  id={`inline-${type}-2`}
+                  onChange={this.updateInput}
+                  value={2}
+                />
+                <Form.Check
+                  inline
+                  label="3 Star"
+                  name="cleanliness"
+                  type={type}
+                  id={`inline-${type}-3`}
+                  onChange={this.updateInput}
+                  value={3}
+                />
+                <Form.Check
+                  inline
+                  label="4 Star"
+                  name="cleanliness"
+                  type={type}
+                  id={`inline-${type}-4`}
+                  onChange={this.updateInput}
+                  value={4}
+                />
+                <Form.Check
+                  inline
+                  label="5 Star"
+                  name="cleanliness"
+                  type={type}
+                  id={`inline-${type}-5`}
+                  onChange={this.updateInput}
+                  value={5}
+                />
+              </div>
+            ))}
+          </span>
           <h6>Ease of Use and Access</h6>
-          {['radio'].map((type) => (
-            <div key={`inline-${type}`} className="mb-3">
-              <Form.Check
-                inline
-                label="1 Star"
-                name="easeOfUse"
-                type={type}
-                id={`inline-${type}-1`}
-                onChange={this.updateInput}
-                value={this.state.easeOfUse}
-              />
-              <Form.Check
-                inline
-                label="2 Star"
-                name="easeOfUse"
-                type={type}
-                id={`inline-${type}-2`}
-                onChange={this.updateInput}
-                value={this.state.easeOfUse}
-              />
-              <Form.Check
-                inline
-                label="3 Star"
-                name="easeOfUse"
-                type={type}
-                id={`inline-${type}-3`}
-                onChange={this.updateInput}
-                value={this.state.easeOfUse}
-              />
-              <Form.Check
-                inline
-                label="4 Star"
-                name="ceaseOfUse"
-                type={type}
-                id={`inline-${type}-4`}
-                onChange={this.updateInput}
-                value={this.state.easeOfUse}
-              />
-              <Form.Check
-                inline
-                label="5 Star"
-                name="easeOfUse"
-                type={type}
-                id={`inline-${type}-5`}
-                onChange={this.updateInput}
-                value={5}
-              />
-            </div>
-          ))}
+          <span className="star-cb-group">
+            {['radio'].map((type) => (
+              <div key={`inline-${type}`} className="mb-3">
+                <Form.Check
+                  inline
+                  label="1 Star"
+                  name="easeOfUse"
+                  type={type}
+                  id={`inline-${type}-1`}
+                  onChange={this.updateInput}
+                  value={1}
+                />
+                <Form.Check
+                  inline
+                  label="2 Star"
+                  name="easeOfUse"
+                  type={type}
+                  id={`inline-${type}-2`}
+                  onChange={this.updateInput}
+                  value={2}
+                />
+                <Form.Check
+                  inline
+                  label="3 Star"
+                  name="easeOfUse"
+                  type={type}
+                  id={`inline-${type}-3`}
+                  onChange={this.updateInput}
+                  value={3}
+                />
+                <Form.Check
+                  inline
+                  label="4 Star"
+                  name="ceaseOfUse"
+                  type={type}
+                  id={`inline-${type}-4`}
+                  onChange={this.updateInput}
+                  value={4}
+                />
+                <Form.Check
+                  inline
+                  label="5 Star"
+                  name="easeOfUse"
+                  type={type}
+                  id={`inline-${type}-5`}
+                  onChange={this.updateInput}
+                  value={5}
+                />
+              </div>
+            ))}
+          </span>
           <Form.Control
             as='textarea'
             rows={4}
