@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes,
 import Header from "./Header/Header";
 import ReviewForm from "./Reviews/ReviewForm";
 import Home from "./Home/Home";
+import ReviewList from "./Reviews/ReviewList";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/review/new" element={<ReviewForm />} />
           <Route path="/" element={<Home />} />
+          <Route path="/reviews" element={<ReviewList />} />
         </Routes>
       </Router>
     </React.Fragment>

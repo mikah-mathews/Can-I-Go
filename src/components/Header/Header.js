@@ -21,6 +21,7 @@ function Header() {
             >
               <Link to="/">Home</Link>
               <Link to="/review/new">New Review</Link>
+              <Link to="/reviews">All Reviews</Link>
             </Nav>
             <Form className="d-flex">
               <FormControl
