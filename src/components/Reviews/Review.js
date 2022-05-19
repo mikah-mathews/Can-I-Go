@@ -2,7 +2,7 @@ import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';
 import { PropTypes } from 'prop-types';
 
 
@@ -20,6 +20,7 @@ function Review(props) {
             <p>Cleanliness: {props.cleanliness} stars</p> <br />
             <p>Ease of Use: {props.easeOfUse} stars</p> <br />
             <h6>{props.writtenReview}</h6>
+            <Button variant="dark" size="sm" className="px-4 rounded-pill shadow-sm">Edit</Button>
           </Col>
         </Row>
       </ListGroup.Item>

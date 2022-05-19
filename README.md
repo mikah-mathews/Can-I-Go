@@ -5,25 +5,27 @@
 #### _A website application to rate and review bathroom accessibility_
 
 ## Technologies Used
-* C#
-* .NET
-* MStest
+* Bootstrap
+* Firebase
+* React
+* React Bootstrap
+* React DOM
+* React Redux
+* React-Redux-Firebase
+* React-Router
+* React-Router-DOM
+* Redux
+* Redux-Firestore
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_Can I Go is a website application for users to find and post reviews about bathroom accessibility_
 
 ## Setup/Installation Requirements
 
-* Visit https://**********.github.com/
-
 * Clone this repository to your local machine
-* Navigate to the {Template.Tests} folder using your terminal.
-* To install the project's dependencies, in the terminal type ```dotnet restore```
-* Once dependencies are installed, type ```dotnet test``` in the terminal to run the project's tests.
-* To run the application navigate to the {Template} folder using the terminal.
-* Once in the {Template} folder, type ```dotnet run``` to run the program.
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+* Open a terminal and run 'npm install'
+* Then run 'npm start'
 
 ## Known Bugs
 
